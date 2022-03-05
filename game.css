@@ -1,0 +1,137 @@
+html{
+cursor: crosshair;
+}
+ body{
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+ 
+    }
+ body::before{
+     content: '';
+     display: block;
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     background-image: url(bg.jpg);
+     background-size: cover;
+    
+ }
+ @keyframes fly{
+     0%{
+         left: 150%;
+         top: 10%; 
+     }
+     25%{
+        left: 80%;
+        top: 50%; 
+    } 50%{
+        left: 50%;
+        top: 20%; 
+    }
+    75%{
+        left: 30%;
+        top: 30%; 
+    } 100%{
+        left: -50%;
+        top: 10%; 
+    }
+  
+ }
+ @keyframes fly{
+    0%{
+        left: 150%;
+        top: 10%; 
+    }
+    25%{
+       left: 80%;
+       top: 50%; 
+   } 50%{
+       left: 50%;
+       top: 20%; 
+   }
+   75%{
+       left: 30%;
+       top: 30%; 
+   } 100%{
+       left: -50%;
+       top: 10%; 
+   }
+ 
+}
+@keyframes fall{
+  
+    100%{
+        top: 100%;
+    }
+}
+ input + label{
+     position: absolute;
+     left:  -100px;
+     z-index: 99;
+     width: 36px !important;
+     height: 36px !important; 
+     display: block;
+     transform: translate(-50%,-50%);
+     background-position: -138px;
+ }
+ input:checked + label{
+    opacity: 0;
+    animation: fall 5s linear;
+    transition: 5s;
+    transform: rotate(100deg) ;
+
+ }
+ .duck{
+animation: fly 5s linear;
+cursor: crosshair;
+}
+
+.duck-1{
+    animation: fly 6s linear;
+    cursor: crosshair;
+    }
+    .duck-2{
+        animation: fly 7s linear;
+        cursor: crosshair;
+        }
+        .duck-3{
+            animation: fly 4s linear;
+            cursor: crosshair;
+            }
+            .duck-4{
+                animation: fly 5s linear;
+                cursor: crosshair;
+                }
+.score{
+    position: absolute;
+    bottom: 10px;
+    height: 50px !important;
+    width: 100%;
+    background-color: rgb(204, 111, 6);
+    text-align: center;
+    font-size: 25pt !important;
+    color: #fff;
+    z-index: 2;
+    font-weight: bolder;
+}
+.score::after{
+    content: counter(score);
+    display: inline-block;
+}
+.score::before{
+    content: "Score:";
+    display: inline-block;
+
+}
+input:checked{
+    counter-increment: score;
+}
+img{
+    width: 100px !important;
+    height: 100px !important;
+}
+ input{
+visibility: hidden;
+} 
